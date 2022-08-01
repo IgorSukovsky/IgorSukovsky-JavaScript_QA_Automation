@@ -47,7 +47,8 @@ describe("webdriver.io page", () => {
     await browser.pause(2000);
 
     await input.setValue("Privet");
-    attr = await input.getAttribute("value");
+    attr = await input.getAttribute("role");
+    console.log(attr);
     console.log("Value attribute is:" + attr);
     await browser.pause(2000);
   });
