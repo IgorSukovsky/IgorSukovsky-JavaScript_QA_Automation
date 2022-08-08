@@ -11,5 +11,6 @@
     "specfiles",
     "sumologic",
     "waitfor"
-  ]
+  ],
+  "html.format.wrapLineLength": 140
 }

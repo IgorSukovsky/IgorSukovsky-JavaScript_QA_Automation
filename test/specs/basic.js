@@ -71,4 +71,31 @@ describe("webdriver.io page", () => {
     console.log("Text for element:" + (await blogButton.getText()));
     await browser.pause(2000);
   });
+  // ======================================is clickable
+  it("should detect if an element is clickable", async () => {
+    await browser.url("https://v5.webdriver.io");
+    const blogButton = await $('[href="/help.html"]');
+    let clickable = await blogButton.isClickable();
+    console.log("IS CLICKABLE?:" + (await clickable));
+  });
+  //=======================================is displayed
+  it("should detect if an element is displayed", async () => {
+    await browser.url("https://v5.webdriver.io");
+    const blogButton = await $('[href="/help.html"]');
+    isDisplayed = await blogButton.isDisplayed();
+    console.log("IS DISPLAYED?:" + isDisplayed);
+  });
+  //=======================================is visible
+  it("should detect if an element is visible", async () => {
+    await browser.url("https://v5.webdriver.io");
+    let isBlogDisplayedInViewport = await $(
+      '[href="/help.html"]'
+    ).isDisplayedInViewport();
+    console.log("isBlogDisplayedInViewport" + isBlogDisplayedInViewport);
+
+    let isGitHubDisplayedInViewport = await $(
+      '#Footer [href="https://github.com/webdriverio/webdriverio"]'
+    ).isDisplayedInViewport();
+    console.log("isGitHubDisplayedInViewport:" + isGitHubDisplayedInViewport);
+  });
 });
